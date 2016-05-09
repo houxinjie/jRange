@@ -96,7 +96,7 @@
 			if (typeof(this.options.value) === 'number') {
 				return true;
 			}
-			return (this.options.value.indexOf(',') !== -1 || this.options.isRange) ?
+			return (this.options.value.toString().indexOf(',') !== -1 || this.options.isRange) ?
 				false : true;
 		},
 		attachEvents: function() {
@@ -292,7 +292,7 @@
 			return (this.domNode.width() * prc) / 100;
 		},
 		isDecimal: function() {
-			return ((this.options.value + this.options.from + this.options.to).indexOf(".")===-1) ? false : true;
+			return ((this.options.value + this.options.from + this.options.to).toString().indexOf(".")===-1) ? false : true;
 		},
 		positionToValue: function(pos) {
 			var value = (pos / this.domNode.width()) * this.interval;
